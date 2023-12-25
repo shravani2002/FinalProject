@@ -23,7 +23,7 @@ export const useFetchQuesction = () => {
             setGetData((prev) => ({ ...prev, apiData: question }));
 
             /**dispatch an action */
-            dispatch(Action.startExamAction());
+            dispatch(Action.startExamAction(question));
           } else {
             throw new Error("No quesction available");
           }
@@ -37,3 +37,12 @@ export const useFetchQuesction = () => {
 
   return [getData, setGetData];
 };
+
+/**moveActionDispatch funcetion */
+export const MoveNextQuestion = () => async (dispatch) => {
+  try {
+      dispatch(Action.moveNextAction()); /** increase trace by 1 */
+  } catch (error) {
+      console.log(error)
+  }
+}
