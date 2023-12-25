@@ -44,5 +44,13 @@ export const MoveNextQuestion = () => async (dispatch) => {
       dispatch(Action.moveNextAction()); /** increase trace by 1 */
   } catch (error) {
       console.log(error)
-  }
+  }}
+
+  /**PrevmoveActionDispatch funcetion */
+  export const MovePrevQuestion = () => async (dispatch) => {
+    try {
+        dispatch(Action.movePrevAction()); /** decrease trace by 1 */
+    } catch (error) {
+        console.log(error)
+    }
 }

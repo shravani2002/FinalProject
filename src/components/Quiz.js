@@ -1,6 +1,6 @@
 import React , {useEffect} from "react";
 import Quesctions from "./Quesctions";
-import { MoveNextQuestion } from "../hook/FetchQuestion";
+import { MoveNextQuestion, MovePrevQuestion} from "../hook/FetchQuestion";
 /**redux store import */
 import {useSelector, useDispatch} from 'react-redux'
 export default function Quiz(){
@@ -18,6 +18,7 @@ export default function Quiz(){
     }
     function onPrev(){
         console.log('On onPrev Click');
+        dispatch(MovePrevQuestion())
     }
     return(
         <div className="container">
