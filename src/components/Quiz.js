@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React , {useEffect, useState} from "react";
 import Quesctions from "./Quesctions";
 
 import { MoveNextQuestion, MovePrevQuestion} from "../hook/FetchQuestion";
@@ -64,5 +64,5 @@ export default function Quiz(){
                 <button className='btn next' onClick={onNext}>Next</button>
             </div>
         </div>
-      );
+      )
 }
