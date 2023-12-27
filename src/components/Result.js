@@ -1,10 +1,19 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import ResultTable from "./ResultTable";
+import { useDispatch } from 'react-redux';
+
+/** import actions  */
+import { resetAllAction } from '../redux/question_reducer';
+import { resetResultAction } from '../redux/result_reducer';
+
 export default function Result() {
-  function onRestart() {
-    console.log('on Restart')
-  }
+
+  const dispatch = useDispatch()
+  function onRestart(){
+    dispatch(resetAllAction())
+    dispatch(resetResultAction())
+}
   return (
     <div className="container">
       <h1 className="title text-light">Smart Prep</h1>
