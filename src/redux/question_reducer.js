@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+/**create reducer */
 export const questionReducer = createSlice({
   name: "questions",
   initialState: {
     queue: [],
-    answers: [], // Array to store selected answers
+    answers: [],
     trace: 0,
   },
   reducers: {
@@ -26,22 +26,9 @@ export const questionReducer = createSlice({
         trace: state.trace - 1,
       };
     },
-    storeAnswerAction: (state, action) => {
-      const { index, answer } = action.payload;
-      const updatedAnswers = [...state.answers];
-      updatedAnswers[index] = answer;
-      return {
-        ...state,
-        answers: updatedAnswers,
-      };
-    },
   },
 });
 
-export const {
-  startExamAction,
-  moveNextAction,
-  movePrevAction,
-  storeAnswerAction,
-} = questionReducer.actions;
+export const { startExamAction, moveNextAction, movePrevAction } =
+  questionReducer.actions;
 export default questionReducer.reducer;
